@@ -60,7 +60,9 @@ in this guide, then the Python Mentors group is available to help guide new cont
 
     print('2)')     # 2)
     for se in s_list:
-        s_dict[se] = s_dict[se] + 1 if se in s_dict else 1
+        # s_dict[se] = s_dict[se] + 1 if se in s_dict else 1
+        s_dict.setdefault(se, 0)
+        s_dict[se] += 1
     s_dict = collections.OrderedDict(sorted(s_dict.items()))
     for se in s_dict:
         print('{0}: {1}'.format(se, s_dict[se]))
@@ -148,9 +150,9 @@ def problem6():
 
 
 if __name__ == '__main__':
-    problem1()
+    # problem1()
     # problem2()
-    # problem3()
+    problem3()
     # problem4()
     # problem5()
     # problem6()

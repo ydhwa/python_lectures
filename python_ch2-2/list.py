@@ -145,9 +145,9 @@ print(l4)
 
 
 def foo(x):
-    return x
+    return x % 10
 
 
 l3 = [10, 46, 22, 93, 81, 35, 44]
 l4 = sorted(l3, key=foo)
-print(l3)
+print(l4)
