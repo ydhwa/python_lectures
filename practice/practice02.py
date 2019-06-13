@@ -12,11 +12,11 @@ def problem1():
 
     list1 = s[1:].split('/')
     # print(', '.join(list(map(str, list1))))
-    print(list1)
+    print(', '.join(list1))
 
     list2 = s.rsplit('/', 1)
     # print('{0}, {1}'.format(list2[0], list2[1]))
-    print(list2)
+    print(', '.join(list2))
 
     print()
 
@@ -179,10 +179,10 @@ def problem6_2():
 
 
 if __name__ == '__main__':
-    # problem1()
+    problem1()
     # problem2()
-    problem3()
+    # problem3()
     # problem4()
     # problem5()
     # problem6_1()
-    problem6_2()
+    # problem6_2()
