@@ -114,7 +114,7 @@ def args_sum(*args):
 # 아래의 화면과 같이 카드 속의 수가 57인 경우를 보면 수를 맞추는 사람이 40이라고 입력하면 "더 높게",
 # 다시 75라고 입력하면 "더 낮게"라는 식으로 범위를 좁혀가며 수를 맞추고 있습니다.
 # 게임을 반복하기 위해 y/n 이라고 묻고 n인 경우 종료됩니다.
-def problem6():
+def problem6_1():
     print('[문제 6]')
 
     answer = count = low = high = 0
@@ -133,8 +133,7 @@ def problem6():
         count += 1
 
         if guess == answer:
-            continue_command = input('맞았습니다.\n다시 하시겠습니까?(y/n)>> ')
-            if continue_command == 'y':
+            if 'y' == input('맞았습니다.\n다시 하시겠습니까?(y/n)>> '):
                 start = True
             else:
                 break
@@ -149,10 +148,41 @@ def problem6():
     print()
 
 
+# 다른 방식으로 풀이
+def problem6_2():
+    print('[문제 6]')
+
+    while True:
+        high, low = 100, 1
+        answer = random.randrange(high) + low
+        count = 0;
+        print('수를 결정하였습니다. 맞추어보세요.')
+
+        while True:
+            count += 1
+            print('{0}-{1}'.format(low, high))
+            guess = int(input('{0}>> '.format(count)))
+
+            if guess == answer:
+                if 'n' == input('맞았습니다.\n다시 하시겠습니까?(y/n)>> '):
+                    return
+                break
+            else:
+                if guess < answer:
+                    print('더 높게')
+                    low = guess if guess > low else low
+                else:
+                    print('더 낮게')
+                    high = guess if guess < high else high
+
+    print()
+
+
 if __name__ == '__main__':
     # problem1()
     # problem2()
     problem3()
     # problem4()
     # problem5()
-    # problem6()
+    # problem6_1()
+    problem6_2()
