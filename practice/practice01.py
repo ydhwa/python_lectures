@@ -4,11 +4,7 @@ def problem1():
 
     try:
         var = int(input('수를 입력하세요: '))
-
-        if var % 3 != 0:
-            print('3의 배수가 아닙니다.')
-        else:
-            print('3의 배수 입니다.')
+        print('3의 배수가 아닙니다.' if var % 3 != 0 else '3의 배수 입니다.')
 
     except ValueError:
         print('정수가 아닙니다.')
@@ -22,11 +18,7 @@ def problem2():
 
     try:
         var = int(input('수를 입력하세요: '))
-
-        if var % 2 == 0:
-            print('짝수')
-        else:
-            print('홀수')
+        print('짝수' if var & 0x01 == 0 else '홀수')
 
     except ValueError:
         print('정수가 아닙니다.')
@@ -38,10 +30,12 @@ def problem2():
 def problem3():
     print('[문제 3]')
 
+    # for i in range(1, 11):
+    #     for j in range(0, i):
+    #         print('*', end='')
+    #     print()
     for i in range(1, 11):
-        for j in range(0, i):
-            print('*', end='')
-        print()
+        print('*' * i)
 
     print()
 
@@ -94,7 +88,7 @@ def problem7():
     print('[문제 7]')
 
     # 여긴 예외처리 안함
-    #list(map(int, input('리스트에 넣을 정수를 입력해주세요. " " 단위로 구분합니다.').split()))
+    # list(map(int, input('리스트에 넣을 정수를 입력해주세요. " " 단위로 구분합니다.').split()))
     l1 = []
     for i in range(5):
         l1.append(int(input('> ')))
@@ -112,15 +106,18 @@ def problem8():
     s = input('입력> ')
     print('결과>', reverse(s))
 
+    # 아래 방법으로도 가능
+    # print(s[::-1])
+
     print()
 
 
 def reverse(s):
-    slist = list(s)
+    s_list = list(s)
     size = len(s)
     for i in range(int(size / 2)):
-        slist[i], slist[size - 1 - i] = slist[size - 1 - i], slist[i]
-    return ''.join(slist)
+        s_list[i], s_list[size - 1 - i] = s_list[size - 1 - i], s_list[i]
+    return ''.join(s_list)
 
 
 # 문제 9. 주어진 if 문을 dict를 사용해서 수정하세요.
@@ -153,13 +150,19 @@ def problem10():
     print('[문제 10]')
     # 예외처리 하지 않음
     var = int(input('숫자를 입력하세요: '))
+    s = 0
 
-    if var % 2 == 1:
-        result = sum(filter(lambda i: i % 2 == 1, range(var + 1)))
-    else:
-        result = sum(filter(lambda i: i % 2 == 0, range(var + 1)))
+    for i in range(var + 1):
+        if var & 0x01 ^ i & 0x01 == 0:
+            s += i
 
-    print('결과 값:', result)
+    print('결과 값:', s)
+
+    # if var % 2 == 1:
+    #     result = sum(filter(lambda i: i % 2 == 1, range(var + 1)))
+    # else:
+    #     result = sum(filter(lambda i: i % 2 == 0, range(var + 1)))
+    # print('결과 값:', result)
 
     print();
 
@@ -167,7 +170,7 @@ def problem10():
 if __name__ == '__main__':
     # problem1()
     # problem2()
-    # problem3()
+    problem3()
     # problem4()
     # problem4()
     # problem5()
@@ -175,4 +178,4 @@ if __name__ == '__main__':
     # problem7()
     # problem8()
     # problem9()
-    problem10()
+    # problem10()
