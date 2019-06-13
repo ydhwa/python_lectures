@@ -11,10 +11,12 @@ def problem1():
     s = '/usr/local/bin/python'
 
     list1 = s[1:].split('/')
-    print(', '.join(list(map(str, list1))))
+    # print(', '.join(list(map(str, list1))))
+    print(list1)
 
-    last_index = s.rfind('/')
-    print('{0}, {1}'.format(s[0:last_index], s[last_index + 1:]))
+    list2 = s.rsplit('/', 1)
+    # print('{0}, {1}'.format(list2[0], list2[1]))
+    print(list2)
 
     print()
 
@@ -33,7 +35,7 @@ def problem2():
         </p>
     </body>
 </html>"""
-    print(re.sub('[<]{1}[/]?[\w\s=:\'/#.\-]*[>]{1}', '  ', s))
+    print(re.sub('[<]{1}[/]?[\w\s\-\'=:/#.]*[>]{1}', '  ', s))
 
     print()
 
@@ -86,18 +88,19 @@ def problem4():
     print()
 
 
-# 문제 5.
+# 문제 5. 함수 sum을 만드세요. 이 함수는 임의의 개수의 인수를 받아서 그 합을 계산합니다.
+# args_sum으로 만듦
 def problem5():
     print('[문제 5]')
 
-    print(sum(0))
-    print(sum(0, 1, 2))
-    print(sum(0, 1, 2, 3, 4, 5, 3))
+    print(args_sum(0))
+    print(args_sum(0, 1, 2))
+    print(args_sum(0, 1, 2, 3, 4, 5, 3))
 
     print()
 
 
-def sum(*args):
+def args_sum(*args):
     result = 0
     for i in args:
         result += i
@@ -112,6 +115,7 @@ def sum(*args):
 def problem6():
     print('[문제 6]')
 
+    answer = count = low = high = 0
     start = True
     while True:
         if start:
@@ -144,9 +148,9 @@ def problem6():
 
 
 if __name__ == '__main__':
-    # problem1()
+    problem1()
     # problem2()
-    problem3()
+    # problem3()
     # problem4()
     # problem5()
     # problem6()
