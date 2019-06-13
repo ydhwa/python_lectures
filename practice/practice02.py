@@ -45,9 +45,9 @@ def problem3():
     print('[문제 3]')
 
     s = """We encourage everyone to contribute to Python. If you still have questions after reviewing the material
-in this guide, then the Python Mentors group is available to help guide new contributors through the process."""
+in this guide, then the Python Mentors group is available to help guide new contributors through the process.""".upper()
 
-    s_list = re.sub("[.,\n]+", "", s.upper()).split(" ")
+    s_list = re.sub("[.,\n]+", "", s).split(" ")
     s_set = sorted(set(s_list))
     s_dict = {}
 
@@ -62,6 +62,10 @@ in this guide, then the Python Mentors group is available to help guide new cont
     s_dict = collections.OrderedDict(sorted(s_dict.items()))
     for se in s_dict:
         print('{0}: {1}'.format(se, s_dict[se]))
+
+    # 버그 있음. count를 할 경우 부분 포함까지 카운팅함.
+    # for se in s_set:
+    #     print('{0}: {1}'.format(se, s.count(se)))
 
     print()
 
@@ -142,7 +146,7 @@ def problem6():
 if __name__ == '__main__':
     # problem1()
     # problem2()
-    # problem3()
+    problem3()
     # problem4()
     # problem5()
-    problem6()
+    # problem6()

@@ -81,8 +81,86 @@ print(f % (name, age))
 f = "name: %(n)s, age: %(a)d"
 print(f % {'n': name, 'a': 10})
 
+
+# 객체함수
+# 1. 대소문자 관련
+s = 'i like Python'
+print(s.upper())
+print(s.lower())
+print(s.swapcase())     # 소 -> 대, 대 -> 소
+print(s.capitalize())
+print(s.title())        # 단어 첫자 대문자로
+
+# 2. 검색
+s = 'I Like Python. I Like Java Also'
+print(s.count('Like'))
+print(s.find('Like', 5))
+print(s.find('JavaScript'))     # 못찾았으면 -1 반환
+print(s.rfind('Like'))      # = lastIndexOf
+
+print(s.index('Like'))      # find와의 차이점: 못찾으면 exception이 뜸
+print(s.rindex('Like'))     # rfind와의 차이점: 위와 동일
+
+print(s.startswith('I LIke'))
+print(s.startswith('Like', 2))
+print(s.endswith('Also'))
+print(s.endswith('Java', 0, 26))
+
+# 편집과 치환
+s = '      spam ans ham      '
+print('------' + s.strip() + '-------')
+print('------' + s.rstrip() + '-------')
+print('------' + s.lstrip() + '-------')
+
+s = '<><abc><><defg><><>'
+print('------' + s.strip('<>') + '------')
+print('------' + s.strip('><') + '------')
+
+s = 'Hello Java'
+print(s.replace('Java', "Python"))
+
+# 분리 & 결합
+s = 'spam and ham'
+l = s.split(' and ')
+print(l, type(l))
+
+s2 = ':'.join(l)
+print(s2)
+
+s3 = 'one:two:three:four:five'
+print(s3.split(':'))
+print(s3.split(':', 2))
+print(s3.rsplit(':', 2))
+
+
+lines = '''1st line
+2nd line
+3rd line
+4th line
+'''
+print(lines.split('\n'))
+print(lines.splitlines())   # 맨 끝에 있는 빈 스트링은 취급하지 않음
+
+# 판별
+print('1234'.isdigit())
+print('hello'.isdigit())
+print('1234'.isalpha())
+print('hello'.isalpha())
+print('1234a'.isalnum())
+print('abcd'.isupper())
+print('abcd'.islower())
+print('        '.isspace())
+print('\r\n\t'.isspace())     # 컨트롤 문자
+
+# '0' 채우기
+print('20'.zfill(5))
+print('1234'.zfill(5))
+
+# 서식: 객체함수
+print('Name: {}, Age: {}'.format(name, age))
 print('Name: {0}, Age: {1}'.format(name, age))
-
-
+print('Name: {1}, Age: {0}'.format(name, age))
+print('{:3}의 제곱근은 {:.7}'.format(2, 2 ** 0.5))
+print('Name: {n}, Age: {a}'.format_map({'n': name, 'a': age}))
 
 
