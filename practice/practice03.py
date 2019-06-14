@@ -110,7 +110,7 @@ def print_example_list(examples):
 
 def make_example_list(answer):
     answers = []
-    examples = []
+    examples = set()
 
     for i in range(1, 10):
         for j in range(1, 10):
@@ -118,11 +118,12 @@ def make_example_list(answer):
 
     answers = list(answers)
 
-    # 답 목록을 넣을 때는 굳이 중복 검사를 하지 않아도 되나보다.
+    # 답 목록을 넣을 때 중복검사 해야한다.
     while len(examples) < 9:
         example = answers[random.randrange(len(answers))]
-        examples.append(example)
+        examples.add(example)
 
+    examples = list(examples)
     examples[random.randrange(9)] = answer
 
     return examples
@@ -167,6 +168,6 @@ if __name__ == '__main__':
     # problem01()
     # problem02()
     # problem03()
-    # problem04()
-    problem05()
+    problem04()
+    # problem05()
 
