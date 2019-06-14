@@ -22,6 +22,7 @@ def problem01():
 
     print()
 
+
 # 문제2.
 # range() 함수와 유사한 frange() 함수를 작성해 보세요. frange() 함수는 실수 리스트를
 # 반환합니다.
@@ -33,7 +34,6 @@ def problem02():
     print(frange(1.0, 3.0, 0.5))
 
     print()
-
 
 def frange(val, base=0.0, step=0.1):
     result = []
@@ -100,7 +100,6 @@ def problem04():
 
     print()
 
-
 # 정답을 포함한 답 목록 생성
 def print_example_list(examples):
     for i in range(0, 9, 3):
@@ -108,7 +107,6 @@ def print_example_list(examples):
     print()
 
     return examples
-
 
 # 답 목록 출력
 def make_example_list(answer):
@@ -151,10 +149,8 @@ def problem05():
 
     print()
 
-
 def print_sort(sort_style, l):
     print('{0} sort\n{1}'.format(sort_style, ' '.join(str(i) for i in l)))
-
 
 def bubble_sort(l):
     for i in range(len(l) - 1):
@@ -162,7 +158,6 @@ def bubble_sort(l):
             if l[j] < l[j + 1]:
                 l[j + 1], l[j] = l[j], l[j + 1]
     return l
-
 
 def selection_sort(l):
     for i in range(len(l) - 1):
