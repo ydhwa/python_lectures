@@ -12,7 +12,8 @@
 > 연습문제 풀이
 
 - practice01
-- practice02 
+- practice02
+- practice03
 
 ### python_ch
 - 1: 간단 연습
