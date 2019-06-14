@@ -61,9 +61,10 @@ def problem03():
     arrears = [101, 203, 301, 404]
 
     for i in range(len(apart)):
-        for g in apart[i]:
-            if g not in arrears:
-                print('Newspaper delivery: {0}'.format(g))
+        for room in apart[i]:
+            if room not in arrears:
+                # print('Newspaper delivery: {0}'.format(room))
+                print(f'Newspaper delivery: {room}')        # 이게 더 빠르다고 함
 
     print()
 
@@ -79,8 +80,8 @@ def problem04():
     answer = first_num * second_num
     print('{0} x {1} = ?\n'.format(first_num, second_num))
 
-    examples = make_example_list(answer)
-    print_example_list(examples)
+    examples = make_example_list(answer)        # 정답을 포함한 답 목록 생성
+    print_example_list(examples)                # 답 목록 출력
 
     # 풀기 전까진 빠져나올 수 없는 지옥
     while True:
@@ -100,6 +101,7 @@ def problem04():
     print()
 
 
+# 정답을 포함한 답 목록 생성
 def print_example_list(examples):
     for i in range(0, 9, 3):
         print('{0}\t{1}\t{2}'.format(examples[i + 0], examples[i + 1], examples[i + 2]))
@@ -108,6 +110,7 @@ def print_example_list(examples):
     return examples
 
 
+# 답 목록 출력
 def make_example_list(answer):
     answers = []
     examples = set()
@@ -138,11 +141,19 @@ def problem05():
 
     l = [5, 9, 3, 8, 60, 20, 1]
 
-    print('Before sort\n{0}'.format(' '.join(str(i) for i in l)))
-    print('After sort(Bubble Sort)\n{0}'.format(' '.join(str(i) for i in bubble_sort(l))))
-    print('After sort(Selection Sort)\n{0}'.format(' '.join(str(i) for i in selection_sort(l))))
+    # print('Before sort\n{0}'.format(' '.join(str(i) for i in l)))
+    # print('(Bubble Sort)After sort\n{0}'.format(' '.join(str(i) for i in bubble_sort(l))))
+    # print('(Selection Sort)After sort\n{0}'.format(' '.join(str(i) for i in selection_sort(l))))
+
+    print_sort('Before', l)
+    print_sort('Bubble Sort - After', bubble_sort(l))
+    print_sort('Selection Sort - After', selection_sort(l))
 
     print()
+
+
+def print_sort(sort_style, l):
+    print('{0} sort\n{1}'.format(sort_style, ' '.join(str(i) for i in l)))
 
 
 def bubble_sort(l):
@@ -168,6 +179,6 @@ if __name__ == '__main__':
     # problem01()
     # problem02()
     # problem03()
-    problem04()
-    # problem05()
+    # problem04()
+    problem05()
 
