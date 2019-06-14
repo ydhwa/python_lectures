@@ -179,10 +179,10 @@ def problem6_2():
 
 
 if __name__ == '__main__':
-    problem1()
+    # problem1()
     # problem2()
     # problem3()
-    # problem4()
+    problem4()
     # problem5()
     # problem6_1()
     # problem6_2()
