@@ -15,6 +15,9 @@
 - practice02
 - practice03
 
+### pygame-test
+pygame 프로젝트에 대한 import 테스트
+
 ### python_ch
 - 1: 간단 연습
 - 2-1: 변수명과 예약어
@@ -27,6 +30,7 @@
    - Custom 모듈 실행시키려면 python-modules 프로젝트도 clone 받아야 한다.
    - 그 후, 모듈을 이 프로젝트에서 사용할 수 있게 설정해줘야 한다.
 - 2-8: 클래스
+   - 인스턴스 메소드, 클래스 메소드, 스태틱 메소드 구분
 
 ### pygame-test
 - ch7-7 패키징 연습
