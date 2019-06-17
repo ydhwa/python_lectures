@@ -1,7 +1,7 @@
 # Python 실습
 
 ## 환경
-- Python 3.7
+- Python 3.7.3
 - pycharm 커뮤니티 버전
 - venv는 .gitignore를 이용하여 제외하였기 때문에 clone 받은 후 별도의 설정이 필요하다.
    - venv: default
@@ -22,4 +22,5 @@
 - 2-3: 객체
 - 2-4: 제어문
 - 2-5: 함수
+- 2.6: 입출력
 
