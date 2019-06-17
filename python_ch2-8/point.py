@@ -1,6 +1,6 @@
 # class Point
 
-class Point(object):
+class Point:
     count_of_instance = 1000
 
     # 인스턴스 메소드
