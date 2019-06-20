@@ -34,6 +34,9 @@ pygame 프로젝트에 대한 import 테스트
 - lambda: 람다 연습
 
 ### pygame-test
-- ch7-7 패키징 연습
+- ch2-7 패키징 연습
 - library
 - pygame 프로젝트 사용
+
+### python_weblib
+python web library(http, urllib) 사용 연습
