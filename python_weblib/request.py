@@ -19,5 +19,8 @@ print(data)
 
 # Request객체가 있어야 POST 방식으로 보낼 수 있다.
 request = Request('http://www.example.com', data)
+request.add_header('Content-Type', 'text/html')
+# request.add_header('cookies:jsessionid=165413548643')     # session id hijacking
+
 httpresponse = urlopen(request)
 print(httpresponse.read())
