@@ -38,5 +38,8 @@ pygame 프로젝트에 대한 import 테스트
 - library
 - pygame 프로젝트 사용
 
+### lambda
+lambda 연습
+
 ### python_weblib
 python web library(http, urllib) 사용 연습
